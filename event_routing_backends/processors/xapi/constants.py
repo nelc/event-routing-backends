@@ -29,6 +29,7 @@ XAPI_ACTIVITY_MODULE = 'http://adlnet.gov/expapi/activities/module'
 XAPI_ACTIVITY_VIDEO = 'https://w3id.org/xapi/video/activity-type/video'
 XAPI_ACTIVITY_LINK = 'http://adlnet.gov/expapi/activities/link'
 XAPI_ACTIVITY_POSITION = 'http://id.tincanapi.com/extension/position'
+XAPI_ACTIVITY_UNIT_TEST = 'http://id.tincanapi.com/activitytype/unit-test'
 
 # xAPI context
 XAPI_CONTEXT_REFERRER = 'http://id.tincanapi.com/extension/referrer'

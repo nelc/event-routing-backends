@@ -3,7 +3,7 @@ xAPI Transformer Class
 """
 from tincan import Agent, LanguageMap, Statement, Verb
 
-from event_routing_backends.helpers import get_anonymous_user_id_by_username
+from event_routing_backends.helpers import get_anonymous_user_id_by_username, get_user_by_username
 from event_routing_backends.processors.mixins.base_transformer import BaseTransformerMixin
 from event_routing_backends.processors.xapi import constants
 
@@ -48,9 +48,17 @@ class XApiTransformer(BaseTransformerMixin):
         Returns:
             `Agent`
         """
-        user_uuid = get_anonymous_user_id_by_username(self.event['context'].get('username'))
+        user = get_user_by_username(self.event['context'].get('username'))
+
+        if not user:
+            user_uuid = get_anonymous_user_id_by_username(self.event['context'].get('username'))
+            return Agent(
+                openid='https://openedx.org/users/user-v1/%s' % user_uuid,
+            )
+
         return Agent(
-            openid='https://openedx.org/users/user-v1/%s' % user_uuid,
+            name=user.username,
+            mbox=f'mailto:{user.email}'
         )
 
     def get_timestamp(self):

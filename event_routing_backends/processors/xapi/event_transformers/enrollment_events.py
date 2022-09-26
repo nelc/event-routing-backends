@@ -32,11 +32,14 @@ class BaseEnrollmentTransformer(XApiTransformer):
         course = get_course_from_id(course_id)
         display_name = course['display_name']
 
+        language = self.find_nested('accept_language', '').split(',')[0]
+
         return Activity(
             id=object_id,
             definition=ActivityDefinition(
                 type=constants.XAPI_ACTIVITY_COURSE,
-                name=LanguageMap({constants.EN: display_name}),
+                name=LanguageMap({language: display_name}),
+                description=LanguageMap({language: course.get('short_description')}),
             ),
         )
 

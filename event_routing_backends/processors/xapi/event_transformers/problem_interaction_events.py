@@ -157,6 +157,27 @@ class ProblemSubmittedTransformer(BaseProblemsTransformer):
             }
         )
 
+    def get_object(self):
+        """
+        Get object for xAPI transformed event.
+
+        Returns:
+            `Activity`
+        """
+        language = self.find_nested('accept_language', '').split(',')[0]
+        name = LanguageMap(
+            {language: self.find_nested('display_name', '')},
+        )
+        return Activity(
+            id=self.find_nested('problem_id') or self.find_nested('module_id'),
+            definition=ActivityDefinition(
+                type=constants.XAPI_ACTIVITY_UNIT_TEST,
+                name=name,
+                # Since problems don't have description we use the name.
+                description=name,
+            ),
+        )
+
 
 @XApiTransformersRegistry.register('problem_check')
 class ProblemCheckTransformer(BaseProblemsTransformer):
