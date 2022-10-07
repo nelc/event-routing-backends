@@ -54,6 +54,22 @@ def get_anonymous_user_id_by_username(username):
     return anonymous_id
 
 
+def get_user_by_username(username):
+    """Get User instance from username and return it.
+
+    Arguments:
+        user (User): User instance.
+
+    Returns:
+        User
+    """
+    try:
+        return User.objects.get(username=username)
+    except User.DoesNotExist:
+        logger.info('User with username "%s" does not exist.', username)
+        return None
+
+
 def get_course_from_id(course_id):
     """
     Get Course object using the `course_id`.

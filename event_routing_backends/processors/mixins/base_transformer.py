@@ -22,7 +22,7 @@ class BaseTransformerMixin:
         self.event = event.copy()
         self.transformed_event = {}
 
-    def find_nested(self, key):
+    def find_nested(self, key, default=None):
         """
         Find a key at all levels in the original event dictionary.
 
@@ -32,7 +32,7 @@ class BaseTransformerMixin:
         Returns:
             ANY
         """
-        def _find_nested(event_dict):
+        def _find_nested(event_dict, default=None):
             """
             Inner recursive method to find the key in dict.
 
@@ -49,9 +49,9 @@ class BaseTransformerMixin:
                     found = _find_nested(value)
                     if found is not None:
                         return found
-            return None
+            return default
 
-        return _find_nested(self.event)
+        return _find_nested(self.event, default)
 
     def base_transform(self):
         """
