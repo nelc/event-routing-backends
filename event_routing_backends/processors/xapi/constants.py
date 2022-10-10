@@ -39,6 +39,7 @@ XAPI_ACTIVITY_POSITION = 'http://id.tincanapi.com/extension/position'
 XAPI_ACTIVITY_TOTAL_COUNT = 'https://w3id.org/xapi/acrossx/extensions/total-items'
 XAPI_ACTIVITY_MODE = 'https://w3id.org/xapi/acrossx/extensions/type'
 XAPI_ACTIVITY_ATTEMPT = 'http://id.tincanapi.com/extension/attempt-id'
+XAPI_ACTIVITY_UNIT_TEST = 'http://id.tincanapi.com/activitytype/unit-test'
 
 # xAPI context
 XAPI_CONTEXT_VIDEO_LENGTH = 'https://w3id.org/xapi/video/extensions/length'
