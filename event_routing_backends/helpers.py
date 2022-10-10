@@ -242,3 +242,19 @@ def get_business_critical_events():
         'edx.course.enrollment.deactivated',
         'edx.course.grade.passed.first_time'
     ])
+
+
+def get_user_by_username(username):
+    """Get User instance from username and return it.
+
+    Arguments:
+        user (User): User instance.
+
+    Returns:
+        User
+    """
+    try:
+        return User.objects.get(username=username)
+    except User.DoesNotExist:
+        logger.info('User with username "%s" does not exist.', username)
+        return None
