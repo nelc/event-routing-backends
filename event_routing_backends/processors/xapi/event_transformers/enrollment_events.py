@@ -2,7 +2,7 @@
 Transformers for enrollment related events.
 """
 
-from tincan import Activity, ActivityDefinition, Extensions, LanguageMap, Verb
+from tincan import Activity, ActivityDefinition, LanguageMap, Verb
 
 from event_routing_backends.helpers import get_course_from_id
 from event_routing_backends.processors.xapi import constants
@@ -37,15 +37,15 @@ class BaseEnrollmentTransformer(XApiTransformer):
         object_id = self.get_object_iri('course', course_id)
         course = get_course_from_id(course_id)
         display_name = course['display_name']
+        language = self.find_nested(self.event, 'accept_language', constants.EN).split(',')[0]
+        description = course.get('short_description') if course.get('short_description') else ''
 
         return Activity(
             id=object_id,
             definition=ActivityDefinition(
                 type=constants.XAPI_ACTIVITY_COURSE,
-                name=LanguageMap(**({constants.EN: display_name} if display_name is not None else {})),
-                extensions=Extensions({
-                    constants.XAPI_ACTIVITY_MODE: self.get_data('data.mode')
-                })
+                name=LanguageMap(**({language: display_name} if display_name is not None else {})),
+                description=LanguageMap({language: description}),
             ),
         )
 
