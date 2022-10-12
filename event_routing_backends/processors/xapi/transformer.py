@@ -17,7 +17,7 @@ from tincan import (
     Verb,
 )
 
-from event_routing_backends.helpers import get_anonymous_user_id, get_course_from_id
+from event_routing_backends.helpers import get_anonymous_user_id, get_course_from_id, get_user_by_username
 from event_routing_backends.processors.mixins.base_transformer import BaseTransformerMixin
 from event_routing_backends.processors.xapi import constants
 
@@ -64,10 +64,17 @@ class XApiTransformer(BaseTransformerMixin):
         Returns:
             `Agent`
         """
+        user = get_user_by_username(self.event['context'].get('username'))
 
-        user_uuid = get_anonymous_user_id(self.extract_username_or_userid())
+        if not user:
+            user_uuid = get_anonymous_user_id(self.extract_username_or_userid())
+            return Agent(
+                account={"homePage": settings.LMS_ROOT_URL, "name": user_uuid}
+            )
+
         return Agent(
-            account={"homePage": settings.LMS_ROOT_URL, "name": user_uuid}
+            name=user.username,
+            mbox=f'mailto:{user.email}'
         )
 
     def get_timestamp(self):
