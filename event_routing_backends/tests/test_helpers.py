@@ -109,3 +109,19 @@ class TestHelpers(TestCase):
         user = get_user(self.edx_user.id)
 
         self.assertEqual(self.edx_user, user)
+
+    def test_get_user_priority(self):
+        """Since the method can find users by id or username this checks that the user
+        found by id will be returned instead of the user found by username when a user's
+        username is the same as the id of another user.
+
+        Expected behavior:
+            - Returned user corresponds to the id.
+        """
+        right_user = UserFactory.create(username='testing', email='testing@example.com')
+        # Create user with the previous user id as username.
+        UserFactory.create(username=right_user.id, email='wrong-testing@example.com')
+
+        user = get_user(right_user.id)
+
+        self.assertEqual(right_user, user)
