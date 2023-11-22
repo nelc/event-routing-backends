@@ -28,7 +28,7 @@ class ProcessorBaseFilter(OpenEdxPublicFilter):
         return type("DynamicFilter", (cls,), {"filter_type": filter_type})
 
     @classmethod
-    def run_filter(cls, result):
+    def run_filter(cls, transformer, result):
         """
         Executes a filter after validating the right class configuration.
 
@@ -45,6 +45,6 @@ class ProcessorBaseFilter(OpenEdxPublicFilter):
         if not cls.filter_type:
             raise InvalidFilterType("Parameter filter_type has not been set.")
 
-        data = super().run_pipeline(result=result)
+        data = super().run_pipeline(transformer=transformer, result=result)
 
         return data.get("result", result)
