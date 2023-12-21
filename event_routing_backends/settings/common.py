@@ -139,7 +139,8 @@ def plugin_settings(settings):
                                     'edx.video.language_menu.hidden',
                                     'video_show_cc_menu',
                                     'edx.video.language_menu.shown',
-                                    'edx.course.grade.passed.first_time'
+                                    'edx.course.grade.passed.first_time',
+                                    'edx.certificate.created',
                                 ]
                         }
                     },

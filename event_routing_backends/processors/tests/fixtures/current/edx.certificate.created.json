@@ -1,0 +1,26 @@
+{
+    "context": {
+        "accept_language": "en-US,en;q=0.9",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36",
+        "client_id": null,
+        "course_id": "course-v1:edX+DemoX+Demo_Course",
+        "host": "localhost:18000",
+        "ip": "172.18.0.1",
+        "org_id": "edX",
+        "referer": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course/about",
+        "session": "",
+        "user_id": "",
+        "username": "",
+        "enterprise_uuid": "1a0fbcbe-49e5-42f1-8e83-4cddfa592f22"
+    },
+    "data": {
+        "course_id": "course-v1:edX+DemoX+Demo_Course",
+        "user_id": 3,
+        "certificate_id":"07b6cc1db05346c7841e587a56de0ee0",
+        "enrollment_mode":"no-id-professional",
+        "generation_mode":"self",
+        "certificate_url":"/certificates/07b6cc1db05346c7841e587a56de0ee0"
+    },
+    "name": "edx.certificate.created",
+    "timestamp": "2023-12-21T22:38:20.237535+00:00"
+}
