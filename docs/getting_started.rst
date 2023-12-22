@@ -300,6 +300,8 @@ xAPI Filters
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | event_routing_backends.processors.xapi.video_events.base_video.get_object                       | Allows to modify the xAPI object field, this affects all video events              |
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| event_routing_backends.processors.xapi.certificate_events.generated_certificates.get_object     | Allows to modify the xAPI object field, this affects certificate created           |
++-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. _event-tracking: https://github.com/openedx/event-tracking
 
