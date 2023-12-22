@@ -85,6 +85,11 @@ Exam events
 * `edx.special_exam.proctored.attempt.submitted`_ | edX `sample <../../event_routing_backends/processors/tests/fixtures/current/edx.special_exam.proctored.attempt.submitted.json>`__ | xAPI `map <./xAPI_mapping.rst#edx-special-exam-proctored-attempt-submitted>`__ , `sample <../../event_routing_backends/processors/xapi/tests/fixtures/expected/edx.special_exam.proctored.attempt.submitted.json>`__
 * `edx.special_exam.practice.attempt.submitted`_ | edX `sample <../../event_routing_backends/processors/tests/fixtures/current/edx.special_exam.practice.attempt.submitted.json>`__ | xAPI `map <./xAPI_mapping.rst#edx-special-exam-practice-attempt-submitted>`__ , `sample <../../event_routing_backends/processors/xapi/tests/fixtures/expected/edx.special_exam.practice.attempt.submitted.json>`__
 
+Certificate events
+------------------
+
+* `edx.certificate.created`_ | edX `sample <../../event_routing_backends/processors/tests/fixtures/current/edx.certificate.created.json>`__ | xAPI `map <./xAPI_mapping.rst#edx.certificate.created>`__ , `sample <../../event_routing_backends/processors/xapi/tests/fixtures/expected/edx.certificate.created.json>`__
+
 .. _edx.course.enrollment.activated: http://edx.readthedocs.io/projects/devdata/en/latest/internal_data_formats/tracking_logs/student_event_types.html#edx-course-enrollment-activated-and-edx-course-enrollment-deactivated
 .. _edx.course.enrollment.deactivated: http://edx.readthedocs.io/projects/devdata/en/latest/internal_data_formats/tracking_logs/student_event_types.html#edx-course-enrollment-activated-and-edx-course-enrollment-deactivated
 .. _edx.course.enrollment.mode_changed: https://edx.readthedocs.io/projects/devdata/en/latest/internal_data_formats/tracking_logs/student_event_types.html#edx-course-enrollment-mode-changed
@@ -135,3 +140,4 @@ Exam events
 .. _edx.special_exam.proctored.attempt.submitted: https://docs.openedx.org/en/latest/developers/references/internal_data_formats/tracking_logs/student_event_types.html#edx-special-exam-proctored-attempt-submitted-edx-special-exam-practice-attempt-submitted-and-edx-special-exam-timed-attempt-submitted
 .. _edx.special_exam.practice.attempt.created: https://docs.openedx.org/en/latest/developers/references/internal_data_formats/tracking_logs/student_event_types.html#edx-special-exam-proctored-attempt-created-edx-special-exam-practice-attempt-created-and-edx-special-exam-timed-attempt-created
 .. _edx.special_exam.practice.attempt.submitted: https://docs.openedx.org/en/latest/developers/references/internal_data_formats/tracking_logs/student_event_types.html#edx-special-exam-proctored-attempt-submitted-edx-special-exam-practice-attempt-submitted-and-edx-special-exam-timed-attempt-submitted
+.. _edx.certificate.created: https://edx.readthedocs.io/projects/devdata/en/latest/internal_data_formats/tracking_logs/student_event_types.html#edx-certificate-created
