@@ -8,7 +8,7 @@
    },
    "id":"484fe8d7-7a5b-52ff-a0ab-3d3d8c1a8b27",
    "object":{
-      "id":"http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@course+block@course",
+      "id":"http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course",
       "definition":{
          "type":"http://adlnet.gov/expapi/activities/course"
       },
