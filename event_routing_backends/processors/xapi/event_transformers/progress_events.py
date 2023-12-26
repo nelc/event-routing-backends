@@ -1,6 +1,7 @@
 """
 Transformers for progress related events.
 """
+from django.utils.functional import cached_property
 from tincan import Activity, ActivityDefinition, Extensions, LanguageMap, Result, Verb
 
 from event_routing_backends.processors.openedx_filters.decorators import openedx_filter
@@ -34,7 +35,7 @@ class BaseProgressTransformer(XApiTransformer):
             raise NotImplementedError()
 
         return Activity(
-            id=self.get_object_iri("xblock", self.get_data("data.block_id")),
+            id=self.object_id,
             definition=ActivityDefinition(
                 type=self.object_type,
             ),
@@ -62,6 +63,11 @@ class CompletionCreatedTransformer(BaseProgressTransformer):
     """
     object_type = constants.XAPI_ACTIVITY_RESOURCE
 
+    @cached_property
+    def object_id(self):
+        """This property returns the object identifier for the completion created transformer."""
+        return super().get_object_iri("xblock", self.get_data("data.block_id"))
+
     def get_result(self):
         """
         Get result for xAPI transformed event.
@@ -86,6 +92,11 @@ class ModuleProgressTransformer(BaseProgressTransformer):
     """
     object_type = constants.XAPI_ACTIVITY_MODULE
 
+    @cached_property
+    def object_id(self):
+        """This property returns the object identifier for the module progress transformer."""
+        return super().get_object_iri("xblock", self.get_data("data.block_id"))
+
 
 @XApiTransformersRegistry.register("edx.completion_aggregator.progress.course")
 class CourseProgressTransformer(BaseProgressTransformer):
@@ -93,3 +104,8 @@ class CourseProgressTransformer(BaseProgressTransformer):
     Transformer for event generated when a user makes progress in a course.
     """
     object_type = constants.XAPI_ACTIVITY_COURSE
+
+    @cached_property
+    def object_id(self):
+        """This property returns the object identifier for the course progress transformer."""
+        return super().get_object_iri("courses", self.get_data("data.course_id"))

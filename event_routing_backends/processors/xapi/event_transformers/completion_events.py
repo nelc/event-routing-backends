@@ -1,6 +1,7 @@
 """
 Transformers for completion related events.
 """
+from django.utils.functional import cached_property
 from tincan import Activity, ActivityDefinition, LanguageMap, Verb
 
 from event_routing_backends.processors.openedx_filters.decorators import openedx_filter
@@ -18,6 +19,7 @@ class BaseCompletionTransformer(XApiTransformer):
         display=LanguageMap({constants.EN: constants.COMPLETED}),
     )
     object_type = None
+    object_id = None
 
     @openedx_filter(
         filter_type="event_routing_backends.processors.xapi.completion_events.base_completion.get_object",
@@ -29,11 +31,11 @@ class BaseCompletionTransformer(XApiTransformer):
         Returns:
             `Activity`
         """
-        if not self.object_type:
+        if not self.object_type or not self.object_id:
             raise NotImplementedError()
 
         return Activity(
-            id=self.get_object_iri("xblock", self.get_data("data.block_id")),
+            id=self.object_id,
             definition=ActivityDefinition(
                 type=self.object_type,
             ),
@@ -49,6 +51,11 @@ class ModuleCompletionTransformer(BaseCompletionTransformer):
     """
     object_type = constants.XAPI_ACTIVITY_MODULE
 
+    @cached_property
+    def object_id(self):
+        """This property returns the object identifier for the module completion transformer."""
+        return super().get_object_iri("xblock", self.get_data("data.block_id", required=True))
+
 
 @XApiTransformersRegistry.register("edx.completion_aggregator.completion.course")
 class CourseCompletionTransformer(BaseCompletionTransformer):
@@ -56,3 +63,8 @@ class CourseCompletionTransformer(BaseCompletionTransformer):
     Transformer for event generated when a user completes a course.
     """
     object_type = constants.XAPI_ACTIVITY_COURSE
+
+    @cached_property
+    def object_id(self):
+        """This property returns the object identifier for the course completion transformer."""
+        return super().get_object_iri("courses", self.get_data("data.course_id", required=True))
