@@ -6,12 +6,12 @@
         "homePage": "http://localhost:18000"
       }
    },
-   "id":"957c726c-0fd0-5b39-8730-fc9a94ba12b1",
+   "id":"28ae1567-d53d-5390-ac83-87c3f67925a3",
    "object":{
       "id":"http://localhost:18000/certificates/07b6cc1db05346c7841e587a56de0ee0",
       "definition":{
          "name":{
-            "en":"Certificate course-v1:edX+DemoX+Demo_Course"
+            "en-US":"Certificate course-v1:edX+DemoX+Demo_Course"
          },
          "type":"https://www.opigno.org/en/tincan_registry/activity_type/certificate",
          "extensions":{
@@ -23,7 +23,7 @@
    "verb":{
       "id":"http://id.tincanapi.com/verb/earned",
       "display":{
-         "en":"earned"
+         "en-US":"earned"
       }
    },
    "version":"1.0.3",

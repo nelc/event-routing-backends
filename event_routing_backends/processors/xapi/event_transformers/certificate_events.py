@@ -16,7 +16,7 @@ class GeneratedCertificatesTransformer(XApiTransformer):
     """
     _verb = Verb(
         id=constants.XAPI_VERB_EARNED,
-        display=LanguageMap({constants.EN: constants.EARNED}),
+        display=LanguageMap({constants.EN_US: constants.EARNED}),
     )
 
     @openedx_filter(
@@ -36,7 +36,7 @@ class GeneratedCertificatesTransformer(XApiTransformer):
             id=object_id,
             definition=ActivityDefinition(
                 type=constants.XAPI_ACTIVITY_CERTIFICATE,
-                name=LanguageMap({constants.EN: name}),
+                name=LanguageMap({constants.EN_US: name}),
                 extensions=Extensions({
                     constants.XAPI_ACTIVITY_MODE: self.get_data('data.enrollment_mode')
                 })
