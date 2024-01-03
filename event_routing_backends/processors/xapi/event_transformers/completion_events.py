@@ -68,3 +68,14 @@ class CourseCompletionTransformer(BaseCompletionTransformer):
     def object_id(self):
         """This property returns the object identifier for the course completion transformer."""
         return super().get_object_iri("courses", self.get_data("data.course_id", required=True))
+
+    def get_context_activities(self):
+        """The XApiTransformer class implements this method and returns in the parent key
+        an activity that contains the course metadata however this is not necessary in
+        cases where a transformer uses the course metadata as object since the data is
+        redundant and a course cannot be its own parent, therefore this must return None.
+
+        Returns:
+            None
+        """
+        return None
