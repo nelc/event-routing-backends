@@ -276,6 +276,8 @@ xAPI Filters
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | event_routing_backends.processors.xapi.transformer.xapi_transformer.get_verb                    | Intercepts and allows to modify the xAPI actor field, this affects all xAPI events |
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| event_routing_backends.processors.xapi.transformer.xapi_transformer.get_context                 | Intercepts and allows to modify the xAPI object field, this affects all xAPI events|
++-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | event_routing_backends.processors.xapi.completion_events.completion_created.get_object          | Allows to modify the xAPI object field, this just affects completion events        |
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | event_routing_backends.processors.xapi.enrollment_events.base_enrollment.get_object             | Allows to modify the xAPI object field, this just affects enrollment events        |
