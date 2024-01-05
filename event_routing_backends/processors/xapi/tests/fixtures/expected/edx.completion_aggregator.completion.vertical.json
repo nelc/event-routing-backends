@@ -10,7 +10,7 @@
    "object":{
       "id":"http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@vertical+block@e1fabd9fa55f441caa75580f258ffbc3",
       "definition":{
-         "type":"http://adlnet.gov/expapi/activities/module"
+         "type":"http://adlnet.gov/expapi/activities/lesson"
       },
       "objectType":"Activity"
    },

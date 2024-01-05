@@ -44,10 +44,9 @@ class BaseCompletionTransformer(XApiTransformer):
 
 @XApiTransformersRegistry.register("edx.completion_aggregator.completion.chapter")
 @XApiTransformersRegistry.register("edx.completion_aggregator.completion.sequential")
-@XApiTransformersRegistry.register("edx.completion_aggregator.completion.vertical")
 class ModuleCompletionTransformer(BaseCompletionTransformer):
     """
-    Transformer for events generated when a user completes a section, subsection or unit.
+    Transformer for events generated when a user completes a section or subsection.
     """
     object_type = constants.XAPI_ACTIVITY_MODULE
 
@@ -55,6 +54,14 @@ class ModuleCompletionTransformer(BaseCompletionTransformer):
     def object_id(self):
         """This property returns the object identifier for the module completion transformer."""
         return super().get_object_iri("xblock", self.get_data("data.block_id", required=True))
+
+
+@XApiTransformersRegistry.register("edx.completion_aggregator.completion.vertical")
+class LessonCompletionTransformer(ModuleCompletionTransformer):
+    """
+    Transformer for events generated when a user completes an unit.
+    """
+    object_type = constants.XAPI_ACTIVITY_LESSON
 
 
 @XApiTransformersRegistry.register("edx.completion_aggregator.completion.course")
