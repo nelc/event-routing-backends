@@ -2,7 +2,9 @@
 Transformers for completion related events.
 """
 from django.utils.functional import cached_property
+from opaque_keys.edx.keys import UsageKey  # pylint: disable=import-error
 from tincan import Activity, ActivityDefinition, LanguageMap, Verb
+from xmodule.modulestore.django import modulestore  # pylint: disable=import-error
 
 from event_routing_backends.processors.openedx_filters.decorators import openedx_filter
 from event_routing_backends.processors.xapi import constants
@@ -62,6 +64,23 @@ class LessonCompletionTransformer(ModuleCompletionTransformer):
     Transformer for events generated when a user completes an unit.
     """
     object_type = constants.XAPI_ACTIVITY_LESSON
+
+    def transform(self):
+        """
+        Return transformed `Statement` object.
+
+        `BaseTransformer`'s `transform` method will return dict containing
+        xAPI objects in transformed fields. Here we return a `Statement` object
+        constructed using those fields.
+
+        Returns:
+            `Statement`
+        """
+        block_id = self.get_data("data.block_id", required=True)
+        usage_key = UsageKey.from_string(block_id)
+        vertical = modulestore().get_item(usage_key)
+
+        return {} if vertical.graded else super().transform()
 
 
 @XApiTransformersRegistry.register("edx.completion_aggregator.completion.course")
