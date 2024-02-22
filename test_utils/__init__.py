@@ -45,6 +45,13 @@ def _mock_third_party_modules():
     mocked_models.get_potentially_retired_user_by_username.return_value = mocked_user
     sys.modules['common.djangoapps.student.models'] = mocked_models
 
+    # mock xmodule
+    mocked_modulestore = mock.MagicMock()
+    mocked_item = mock.MagicMock()
+    mocked_item.graded = False
+    mocked_modulestore.modulestore.return_value.get_item.return_value = mocked_item
+    sys.modules['xmodule.modulestore.django'] = mocked_modulestore
+
 
 def mocked_course_reverse(_, kwargs):
     """
