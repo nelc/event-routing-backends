@@ -55,6 +55,7 @@ XAPI_ACTIVITY_TIMED_ASSESSMENT = 'https://w3id.org/xapi/openedx/activity/timed-a
 XAPI_ACTIVITY_PRACTICE_ASSESSMENT = 'https://w3id.org/xapi/openedx/activity/practice-assessment'
 XAPI_ACTIVITY_PROCTORED_ASSESSMENT = 'https://w3id.org/xapi/openedx/activity/proctored-assessment'
 XAPI_ACTIVITY_PROGRESS = 'https://w3id.org/xapi/cmi5/result/extensions/progress'
+XAPI_ACTIVITY_LESSON = 'http://adlnet.gov/expapi/activities/lesson'
 
 # xAPI context
 XAPI_CONTEXT_VIDEO_LENGTH = 'https://w3id.org/xapi/video/extensions/length'
