@@ -885,3 +885,24 @@ id                                                                          <LMS
 objectType                                                                  Activity
 definition [ type ]                                                         http://id.tincanapi.com/activitytype/discussion
 =========================================================================== =======================================================
+
+edx.certificate.created
+=============================
+
+=========================================================================== =======================================================
+xAPI Key                                                                    Value
+=========================================================================== =======================================================
+``Actor``
+objectType                                                                  Agent
+account [ homePage ]                                                        <LMS_ROOT_URL>
+account [ name ]                                                            <external_id[ XAPI ]>
+``Verb``
+id                                                                          http://id.tincanapi.com/verb/earned
+display [ en-US ]                                                           earned
+``Object``
+id                                                                          <LMS_ROOT_URL>/certificates/<data [ certificate_id ]>
+objectType                                                                  Activity
+definition [ type ]                                                         https://www.opigno.org/en/tincan_registry/activity_type/certificate
+definition [ name ][ en-US ]                                                Certificate <data [ course_id ]>
+definition [ extensions [ https://w3id.org/xapi/acrossx/extensions/type ] ] <data [ enrollment_mode ]>
+=========================================================================== =======================================================

@@ -156,6 +156,7 @@ def plugin_settings(settings):
         'edx.course.grade.passed.first_time',
         'edx.course.grade.now_passed',
         'edx.course.grade.now_failed',
+        'edx.certificate.created',
     ]
     # .. setting_name: EVENT_TRACKING_BACKENDS_ALLOWED_CALIPER_EVENTS
     # .. setting_default: [

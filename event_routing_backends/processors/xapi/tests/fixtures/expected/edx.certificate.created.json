@@ -1,0 +1,48 @@
+{
+   "actor": {
+      "objectType": "Agent",
+      "account": {
+        "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
+        "homePage": "http://localhost:18000"
+      }
+   },
+   "id":"28ae1567-d53d-5390-ac83-87c3f67925a3",
+   "object":{
+      "id":"http://localhost:18000/certificates/07b6cc1db05346c7841e587a56de0ee0",
+      "definition":{
+         "name":{
+            "en-US":"Certificate course-v1:edX+DemoX+Demo_Course"
+         },
+         "type":"https://www.opigno.org/en/tincan_registry/activity_type/certificate",
+         "extensions":{
+            "https://w3id.org/xapi/acrossx/extensions/type":"no-id-professional"
+         }
+      },
+      "objectType":"Activity"
+   },
+   "verb":{
+      "id":"http://id.tincanapi.com/verb/earned",
+      "display":{
+         "en-US":"earned"
+      }
+   },
+   "version":"1.0.3",
+   "context":{
+      "contextActivities":{
+         "parent":[
+            {
+               "id":"http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+               "objectType":"Activity",
+               "definition": {
+                  "name": { "en-US": "Demonstration Course" },
+                  "type": "http://adlnet.gov/expapi/activities/course"
+               }
+            }
+         ]
+      },
+      "extensions":{
+         "https://w3id.org/xapi/openedx/extension/transformer-version":"event-routing-backends@1.1.1"
+      }
+   },
+   "timestamp":"2023-12-21T22:38:20.237535+00:00"
+}
