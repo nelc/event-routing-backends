@@ -40,5 +40,7 @@ xAPI Filters
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | event_routing_backends.processors.xapi.video_events.base_video.get_object                       | Allows to modify the xAPI object field, this affects all video events              |
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| event_routing_backends.processors.xapi.transformer.xapi_transformer.get_context                 | Intercepts and allows to modify the xAPI object field, this affects all xAPI events|
++-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. _openedx-filters: https://github.com/openedx/openedx-filters
