@@ -42,5 +42,7 @@ xAPI Filters
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | event_routing_backends.processors.xapi.transformer.xapi_transformer.get_context                 | Intercepts and allows to modify the xAPI object field, this affects all xAPI events|
 +-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| event_routing_backends.processors.xapi.certificate_events.generated_certificates.get_object     | Allows to modify the xAPI object field, this affects certificate created           |
++-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. _openedx-filters: https://github.com/openedx/openedx-filters
