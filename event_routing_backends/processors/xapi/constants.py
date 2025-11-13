@@ -56,6 +56,7 @@ XAPI_ACTIVITY_PRACTICE_ASSESSMENT = 'https://w3id.org/xapi/openedx/activity/prac
 XAPI_ACTIVITY_PROCTORED_ASSESSMENT = 'https://w3id.org/xapi/openedx/activity/proctored-assessment'
 XAPI_ACTIVITY_PROGRESS = 'https://w3id.org/xapi/cmi5/result/extensions/progress'
 XAPI_ACTIVITY_LESSON = 'http://adlnet.gov/expapi/activities/lesson'
+XAPI_ACTIVITY_CERTIFICATE = 'https://www.opigno.org/en/tincan_registry/activity_type/certificate'
 
 # xAPI context
 XAPI_CONTEXT_VIDEO_LENGTH = 'https://w3id.org/xapi/video/extensions/length'
