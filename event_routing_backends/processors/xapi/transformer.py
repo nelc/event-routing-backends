@@ -145,6 +145,7 @@ class XApiTransformer(BaseTransformerMixin):
         else:
             return None
 
+    @openedx_filter(filter_type="event_routing_backends.processors.xapi.transformer.xapi_transformer.get_context")
     def get_context(self):
         """
         Get context for xAPI transformed event.
