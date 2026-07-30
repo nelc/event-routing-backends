@@ -131,7 +131,7 @@ class XApiTransformer(BaseTransformerMixin):
             course_name = LanguageMap({constants.EN_US: course["display_name"]})
             parent_activities = [
                 Activity(
-                    id=self.get_object_iri('course', self.get_data('context.course_id')),
+                    id=self.get_object_iri('courses', self.get_data('context.course_id')),
                     object_type=constants.XAPI_ACTIVITY_COURSE,
                     definition=ActivityDefinition(
                         type=constants.XAPI_ACTIVITY_COURSE,
