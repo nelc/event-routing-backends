@@ -3,6 +3,7 @@ Base Transformer Mixin to add or transform common data values.
 """
 
 import logging
+from urllib.parse import urlparse
 
 from django.conf import settings
 
@@ -230,22 +231,20 @@ class BaseTransformerMixin:
 
     def get_lms_root_url(self):
         """
-        Return LMS root url for the event based on the host in the event context
-        or fallback to settings.LMS_ROOT_URL.
+        Return LMS root url for the event. If the setting EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL is True,
+        it will use the host from the event context to construct the LMS root url.
+        Otherwise, it will use the LMS_ROOT_URL from the settings.
 
         Returns:
             lms_root_url (str): LMS root url for the event
         """
 
-        def build_url(host: str) -> str:
-            """ Build a URL from the host string. """
-            from urllib.parse import urlparse
-            url = urlparse(host)
-            return f"{url.scheme}://{url.netloc}"
+        parsed_url = urlparse(settings.LMS_ROOT_URL)
 
         if getattr(settings, "EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL", False) and (
             event_host := self.event.get("context", {}).get("host")
         ):
-            return build_url(event_host)
+            new_parsed = parsed_url._replace(netloc=event_host)
+            return new_parsed.geturl()
 
-        return settings.LMS_ROOT_URL
+        return parsed_url.geturl()
