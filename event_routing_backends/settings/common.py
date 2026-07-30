@@ -17,6 +17,7 @@ def plugin_settings(settings):
     settings.EVENT_ROUTING_BACKEND_COUNTDOWN = 30
     settings.EVENT_ROUTING_BACKEND_BULK_DOWNLOAD_MAX_RETRIES = 3
     settings.EVENT_ROUTING_BACKEND_BULK_DOWNLOAD_COUNTDOWN = 1
+    settings.EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL = False
     # .. toggle_name: EVENT_ROUTING_BACKEND_BATCHING_ENABLED
     # .. toggle_implementation: DjangoSetting
     # .. toggle_default: False
