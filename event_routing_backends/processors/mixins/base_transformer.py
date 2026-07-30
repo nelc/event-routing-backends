@@ -183,11 +183,7 @@ class BaseTransformerMixin:
 
         if result is None:
             if required:
-                raise ValueError(
-                    'Could not get value for {} in event "{}"'.format(
-                        key, self.event.get("name", None)
-                    )
-                )
+                raise ValueError('Could not get value for {} in event "{}"'.format(key, self.event.get("name", None)))
 
         return result
 
@@ -240,8 +236,9 @@ class BaseTransformerMixin:
         Returns:
             lms_root_url (str): LMS root url for the event
         """
+
         def build_url(host: str) -> str:
-            """ Build a URL from the host string. """
+            """Build a URL from the host string."""
             host = host.replace("http://", "").replace("https://", "").strip("/")
             # Check if a port is specified
             if ":" in host:
@@ -249,9 +246,9 @@ class BaseTransformerMixin:
             # Default to https if no port is found
             return f"https://{host}"
 
-        if getattr(
-                settings, "EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL", False
-            ) and (event_host := self.event.get("context", {}).get("host")):
+        if getattr(settings, "EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL", False) and (
+            event_host := self.event.get("context", {}).get("host")
+        ):
             return build_url(event_host)
 
         return settings.LMS_ROOT_URL
