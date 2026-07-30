@@ -220,7 +220,7 @@ class BaseTransformerMixin:
             return None
 
         return "{root_url}/{object_type}/{object_id}".format(
-            root_url=settings.LMS_ROOT_URL, object_type=object_type, object_id=object_id
+            root_url=self.get_lms_root_url(), object_type=object_type, object_id=object_id
         )
 
     def get_object(self):
@@ -231,3 +231,25 @@ class BaseTransformerMixin:
             dict
         """
         return {}
+
+    def get_lms_root_url(self):
+        """
+        Return LMS root url for the event based on the host in the event context
+        or fallback to settings.LMS_ROOT_URL.
+
+        Returns:
+            lms_root_url (str): LMS root url for the event
+        """
+        def build_url(host: str) -> str:
+            """ Build a URL from the host string. """
+            host = host.replace("http://", "").replace("https://", "").strip("/")
+            # Check if a port is specified
+            if ":" in host:
+                return f"http://{host}"
+            # Default to https if no port is found
+            return f"https://{host}"
+
+        if event_host := self.event.get("context", {}).get("host"):
+            return build_url(event_host)
+
+        return settings.LMS_ROOT_URL

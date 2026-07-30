@@ -148,7 +148,7 @@ class BaseVideoTransformer(XApiTransformer, XApiVerbTransformerMixin):
 
         return Activity(
             id='{lms_root_url}/xblock/{object_id}'.format(
-                    lms_root_url=settings.LMS_ROOT_URL,
+                    lms_root_url=self.get_lms_root_url(),
                     object_id=object_id
                 ),
             definition=ActivityDefinition(
