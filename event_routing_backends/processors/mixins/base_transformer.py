@@ -249,7 +249,9 @@ class BaseTransformerMixin:
             # Default to https if no port is found
             return f"https://{host}"
 
-        if event_host := self.event.get("context", {}).get("host"):
+        if getattr(
+                settings, "EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL", False
+            ) and (event_host := self.event.get("context", {}).get("host")):
             return build_url(event_host)
 
         return settings.LMS_ROOT_URL

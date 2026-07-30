@@ -1,7 +1,6 @@
 """
 Transformers for forum related events.
 """
-from django.conf import settings
 from tincan import Activity, ActivityDefinition, LanguageMap, Verb
 
 from event_routing_backends.processors.openedx_filters.decorators import openedx_filter

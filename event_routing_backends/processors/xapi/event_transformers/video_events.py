@@ -31,7 +31,6 @@ The (soon to be) updated event names are as following:
 - edx.video.closed_captions.shown
 """
 
-from django.conf import settings
 from tincan import Activity, ActivityDefinition, Extensions, Result
 
 from event_routing_backends.helpers import convert_seconds_to_float, make_video_block_id
