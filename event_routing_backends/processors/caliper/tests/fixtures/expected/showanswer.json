@@ -9,7 +9,7 @@
     "id": "urn:uuid:46177499-f443-498d-b65c-3c2daf15e4c6",
     "object": {
         "extensions": {
-            "isPartOf": {"id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course", "type": "CourseOffering"}
+            "isPartOf": {"id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course", "type": "CourseOffering"}
         },
         "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@3fc5461f86764ad7bdbdf6cbdde61e66/solution",
         "type": "Annotation",
