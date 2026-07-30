@@ -238,13 +238,10 @@ class BaseTransformerMixin:
         """
 
         def build_url(host: str) -> str:
-            """Build a URL from the host string."""
-            host = host.replace("http://", "").replace("https://", "").strip("/")
-            # Check if a port is specified
-            if ":" in host:
-                return f"http://{host}"
-            # Default to https if no port is found
-            return f"https://{host}"
+            """ Build a URL from the host string. """
+            from urllib.parse import urlparse
+            url = urlparse(host)
+            return f"{url.scheme}://{url.netloc}"
 
         if getattr(settings, "EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL", False) and (
             event_host := self.event.get("context", {}).get("host")
