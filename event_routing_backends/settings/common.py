@@ -45,7 +45,7 @@ def plugin_settings(settings):
     #    ```
     #    {
     #        "objectType": "Agent",
-    #        "account": {"homePage": "http://localhost:18000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
+    #        "account": {"homePage": "http://local.overhang.io:8000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
     #    }
     #    ```
     #    setting it to 'mbox' xAPI statement would represent actor like this

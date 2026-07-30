@@ -5,7 +5,7 @@
         "client_id": "667522224.1583394645",
         "course_id": "course-v1:edX+DemoX+Demo_Course",
         "course_user_tags": {},
-        "host": "localhost:18000",
+        "host": "local.overhang.io:8000",
         "ip": "172.18.0.1",
         "module": {
             "display_name": "Checkboxes",
@@ -13,7 +13,7 @@
         },
         "org_id": "edX",
         "path": "/courses/course-v1:edX+DemoX+Demo_Course/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@3fc5461f86764ad7bdbdf6cbdde61e66/handler/xmodule_handler/problem_check",
-        "referer": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course/courseware/8b66dcd2d6134eda9355089ece4f39f6/ef37eb3cf1724e38b7f88a9ce85a4842/?activate_block_id=block-v1%3AedX%2BDemoX%2BDemo_Course%2Btype%40sequential%2Bblock%40ef37eb3cf1724e38b7f88a9ce85a4842",
+        "referer": "http://local.overhang.io:8000/courses/course-v1:edX+DemoX+Demo_Course/courseware/8b66dcd2d6134eda9355089ece4f39f6/ef37eb3cf1724e38b7f88a9ce85a4842/?activate_block_id=block-v1%3AedX%2BDemoX%2BDemo_Course%2Btype%40sequential%2Bblock%40ef37eb3cf1724e38b7f88a9ce85a4842",
         "session": "993110e9c27848a545da74a74114158d",
         "user_id": 3,
         "username": "edx"

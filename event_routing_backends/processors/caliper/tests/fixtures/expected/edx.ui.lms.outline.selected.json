@@ -2,18 +2,18 @@
     "@context": "http://purl.imsglobal.org/ctx/caliper/v1p2",
     "action": "NavigatedTo",
     "actor": {
-        "id": "http://localhost:18000/user/32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
+        "id": "http://local.overhang.io:8000/user/32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
         "type": "Person"
     },
     "eventTime": "2020-08-04T12:43:57.705Z",
     "id": "urn:uuid:47946874-7ce0-4465-9efe-9b2510c45310",
     "object": {
-        "id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course/jump_to/block-v1:edX+DemoX+Demo_Course+type@sequential+block@48ecb924d7fe4b66a230137626bfa93e",
+        "id": "http://local.overhang.io:8000/courses/course-v1:edX+DemoX+Demo_Course/jump_to/block-v1:edX+DemoX+Demo_Course+type@sequential+block@48ecb924d7fe4b66a230137626bfa93e",
         "type": "DigitalResource",
         "name": "Lesson 3 - Be Social",
         "extensions": {
           "isPartOf": {
-            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
             "type": "CourseOffering"
           }
         }
@@ -22,7 +22,7 @@
       "transformerVersion": "event-routing-backends@1.1.1"
     },
     "session": {
-      "id": "http://localhost:18000/sessions/a239c681a246b3c5d8b000d1c7249021",
+      "id": "http://local.overhang.io:8000/sessions/a239c681a246b3c5d8b000d1c7249021",
       "type": "Session"
     },
     "type": "NavigationEvent"

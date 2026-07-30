@@ -2,13 +2,13 @@
     "id": "2a1f0f7c-6636-52df-913b-59e2f197a58e",
     "actor": {
         "objectType": "Agent",
-        "account": {"homePage": "http://localhost:18000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
+        "account": {"homePage": "http://local.overhang.io:8000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
     },
     "context": {
         "contextActivities": {
             "parent": [
                 {
-                    "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+                    "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
                     "objectType": "Activity",
                     "definition": {
                       "name": {
@@ -29,7 +29,7 @@
             "interactionType": "other",
             "type": "http://adlnet.gov/expapi/activities/cmi.interaction"
         },
-        "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@sequential+block@ef37eb3cf1724e38b7f88a9ce85a4842",
+        "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@sequential+block@ef37eb3cf1724e38b7f88a9ce85a4842",
         "objectType": "Activity"
     },
     "timestamp": "2020-07-14T14:39:26.580443+00:00",

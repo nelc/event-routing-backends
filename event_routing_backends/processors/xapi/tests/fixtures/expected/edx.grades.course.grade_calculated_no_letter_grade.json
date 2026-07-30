@@ -16,7 +16,7 @@
     "objectType": "Agent",
     "account": {
       "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
-      "homePage": "http://localhost:18000"
+      "homePage": "http://local.overhang.io:8000"
     }
   },
   "verb": {
@@ -26,7 +26,7 @@
     }
   },
   "object": {
-    "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+    "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
     "objectType": "Activity",
     "definition": {
       "name": {
@@ -40,7 +40,7 @@
     "contextActivities": {
       "parent": [
         {
-          "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+          "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
           "objectType": "Activity",
           "definition": {
             "name": {

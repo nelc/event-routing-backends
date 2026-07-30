@@ -2,7 +2,7 @@
     "@context": "http://purl.imsglobal.org/ctx/caliper/v1p2",
     "action": "Submitted",
     "actor": {
-        "id": "http://localhost:18000/user/32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
+        "id": "http://local.overhang.io:8000/user/32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
         "type": "Person"
     },
     "eventTime": "2020-07-15T05:59:29.700Z",
@@ -10,18 +10,18 @@
     "object": {
         "extensions": {
             "isPartOf": {
-              "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+              "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
               "type": "CourseOffering"
             }
         },
-        "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@3fc5461f86764ad7bdbdf6cbdde61e66",
+        "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@3fc5461f86764ad7bdbdf6cbdde61e66",
         "type": "Assessment"
     },
     "extensions": {
       "transformerVersion": "event-routing-backends@1.1.1"
     },
     "session": {
-      "id": "http://localhost:18000/sessions/993110e9c27848a545da74a74114158d",
+      "id": "http://local.overhang.io:8000/sessions/993110e9c27848a545da74a74114158d",
       "type": "Session"
     },
     "type": "AssessmentEvent"

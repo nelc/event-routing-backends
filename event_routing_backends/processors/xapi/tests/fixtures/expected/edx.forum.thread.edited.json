@@ -2,13 +2,13 @@
     "id": "ae1a9bfe-2d3b-5afd-87f4-ad8d4c596932",
     "actor": {
         "objectType": "Agent",
-        "account": {"homePage": "http://localhost:18000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
+        "account": {"homePage": "http://local.overhang.io:8000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
     },
     "context": {
         "contextActivities": {
             "parent": [
                 {
-                    "id": "http://localhost:18000/course/course-v1:testX+XAPI101+2019_T2",
+                    "id": "http://local.overhang.io:8000/course/course-v1:testX+XAPI101+2019_T2",
                     "objectType": "Activity",
                     "definition": {
                       "name": {
@@ -28,7 +28,7 @@
         "definition": {
             "type": "http://id.tincanapi.com/activitytype/discussion"
         },
-        "id": "http://localhost:18000/api/discussion/v1/threads/64a817fce68f35002fd013c3",
+        "id": "http://local.overhang.io:8000/api/discussion/v1/threads/64a817fce68f35002fd013c3",
         "objectType": "Activity"
     },
     "timestamp": "2023-07-10T09:23:10.354202+00:00",
