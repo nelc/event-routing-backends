@@ -2,7 +2,7 @@
     "@context": "http://purl.imsglobal.org/ctx/caliper/v1p2",
     "action": "ChangedSpeed",
     "actor": {
-        "id": "http://local.overhang.io:8000/user/32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
+        "id": "http://localhost:18000/user/32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
         "type": "Person"
     },
     "eventTime": "2022-11-14T11:42:44.581Z",
@@ -11,11 +11,11 @@
         "duration": "PT3M14S",
         "extensions": {
           "isPartOf": {
-            "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
             "type": "CourseOffering"
           }
         },
-        "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@video+block@0b9e39477cf34507a7a48f74be381fdd",
+        "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@video+block@0b9e39477cf34507a7a48f74be381fdd",
         "type": "VideoObject"
     },
     "target": {
@@ -29,7 +29,7 @@
       "transformerVersion": "event-routing-backends@1.1.1"
     },
     "session": {
-      "id": "http://local.overhang.io:8000/sessions/95522acebdda19758bd98a456a640afa",
+      "id": "http://localhost:18000/sessions/95522acebdda19758bd98a456a640afa",
       "type": "Session"
     },
     "type": "MediaEvent"

@@ -2,13 +2,13 @@
     "id": "e9b9ba0f-d976-5656-9a6c-d432b12335ea",
     "actor": {
         "objectType": "Agent",
-        "account": {"homePage": "http://local.overhang.io:8000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
+        "account": {"homePage": "http://localhost:18000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
     },
     "context": {
         "contextActivities": {
             "parent": [
                 {
-                    "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+                    "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
                     "objectType": "Activity",
                     "definition": {
                       "name": {
@@ -28,7 +28,7 @@
         "definition": {
             "type": "https://w3id.org/xapi/acrossx/extensions/supplemental-info"
         },
-        "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@07adfed616844fa780c606b55270a090/hint/1",
+        "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@07adfed616844fa780c606b55270a090/hint/1",
         "objectType": "Activity"
     },
     "timestamp": "2020-07-15T06:09:37.404285+00:00",

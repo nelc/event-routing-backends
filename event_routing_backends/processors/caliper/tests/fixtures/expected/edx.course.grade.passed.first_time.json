@@ -2,13 +2,13 @@
     "@context": "http://purl.imsglobal.org/ctx/caliper/v1p2",
     "action": "Completed",
     "actor": {
-        "id": "http://local.overhang.io:8000/user/32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
+        "id": "http://localhost:18000/user/32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
         "type": "Person"
     },
     "eventTime": "2020-07-15T06:36:01.917Z",
     "id": "urn:uuid:b52eb5c3-350f-45c2-9f03-aa642b7ad30d",
     "object": {
-        "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+        "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
         "type": "CourseOffering",
         "name": "Demonstration Course"
     },
@@ -16,7 +16,7 @@
       "transformerVersion": "event-routing-backends@1.1.1"
     },
     "session": {
-        "id": "http://local.overhang.io:8000/sessions/44c2f6b53a6aaf210797a56391a443bc",
+        "id": "http://localhost:18000/sessions/44c2f6b53a6aaf210797a56391a443bc",
         "type": "Session"
     },
     "type": "Event"

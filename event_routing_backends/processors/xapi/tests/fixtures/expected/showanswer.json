@@ -2,13 +2,13 @@
     "id": "c552e1bc-2a30-555c-99e8-79d72413eaf7",
     "actor": {
         "objectType": "Agent",
-        "account": {"homePage": "http://local.overhang.io:8000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
+        "account": {"homePage": "http://localhost:18000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
     },
     "context": {
         "contextActivities": {
             "parent": [
                 {
-                    "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+                    "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
                     "objectType": "Activity",
                     "definition": {
                       "name": {
@@ -28,7 +28,7 @@
         "definition": {
             "type": "http://id.tincanapi.com/activitytype/solution"
         },
-        "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@3fc5461f86764ad7bdbdf6cbdde61e66/answer",
+        "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@3fc5461f86764ad7bdbdf6cbdde61e66/answer",
         "objectType": "Activity"
     },
     "timestamp": "2020-07-15T06:07:37.810384+00:00",

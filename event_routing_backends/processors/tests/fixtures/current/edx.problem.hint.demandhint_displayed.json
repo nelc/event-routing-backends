@@ -7,7 +7,7 @@
         "course_id": "course-v1:edX+DemoX+Demo_Course",
         "course_user_tags": {},
         "event_source": "server",
-        "host": "local.overhang.io:8000",
+        "host": "localhost:18000",
         "ip": "172.18.0.1",
         "module": {
             "display_name": "Dropdown with Hints and Feedback",
@@ -16,7 +16,7 @@
         "org_id": "edX",
         "page": "x_module",
         "path": "/courses/course-v1:edX+DemoX+Demo_Course/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@07adfed616844fa780c606b55270a090/handler/xmodule_handler/hint_button",
-        "referer": "http://local.overhang.io:8000/courses/course-v1:edX+DemoX+Demo_Course/courseware/8b66dcd2d6134eda9355089ece4f39f6/ef37eb3cf1724e38b7f88a9ce85a4842/?activate_block_id=block-v1%3AedX%2BDemoX%2BDemo_Course%2Btype%40sequential%2Bblock%40ef37eb3cf1724e38b7f88a9ce85a4842",
+        "referer": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course/courseware/8b66dcd2d6134eda9355089ece4f39f6/ef37eb3cf1724e38b7f88a9ce85a4842/?activate_block_id=block-v1%3AedX%2BDemoX%2BDemo_Course%2Btype%40sequential%2Bblock%40ef37eb3cf1724e38b7f88a9ce85a4842",
         "session": "993110e9c27848a545da74a74114158d",
         "user_id": 3,
         "username": "edx"

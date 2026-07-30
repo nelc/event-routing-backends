@@ -2,13 +2,13 @@
     "id": "a10da8af-8e6a-5d1c-b7d5-cdabaacc0ba8",
     "actor": {
         "objectType": "Agent",
-        "account": {"homePage": "http://local.overhang.io:8000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
+        "account": {"homePage": "http://localhost:18000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
     },
     "context": {
         "contextActivities": {
             "parent": [
                 {
-                    "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+                    "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
                     "objectType": "Activity",
                     "definition": {
                       "name": {
@@ -28,7 +28,7 @@
         "definition": {
             "type": "http://adlnet.gov/expapi/activities/question"
         },
-        "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@3fc5461f86764ad7bdbdf6cbdde61e66",
+        "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@3fc5461f86764ad7bdbdf6cbdde61e66",
         "objectType": "Activity"
     },
     "result": {

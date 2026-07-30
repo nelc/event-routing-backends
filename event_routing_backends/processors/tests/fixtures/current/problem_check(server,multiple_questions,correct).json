@@ -3,7 +3,7 @@
    "context":{
       "course_id":"course-v1:edX+DemoX+Demo_Course",
       "course_user_tags":{
-
+         
       },
       "user_id":8,
       "path":"/courses/course-v1:edX+DemoX+Demo_Course/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4/handler/xmodule_handler/problem_check",
@@ -14,15 +14,15 @@
          "usage_key":"block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4"
       },
       "asides":{
-
+         
       }
    },
    "username":"staff",
    "session":"97662bef7c463c187b8fd91e0f580468",
    "ip":"172.18.0.1",
    "agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0",
-   "host":"local.overhang.io:8000",
-   "referer":"http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@vertical+block@54bb9b142c6c4c22afc62bcb628f0e68?exam_access=&format=Homework&recheck_access=1&show_bookmark=0&show_title=0&view=student_view",
+   "host":"localhost:18000",
+   "referer":"http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@vertical+block@54bb9b142c6c4c22afc62bcb628f0e68?exam_access=&format=Homework&recheck_access=1&show_bookmark=0&show_title=0&view=student_view",
    "accept_language":"en-US,en;q=0.5",
    "event":{
       "state":{
@@ -67,13 +67,13 @@
          },
          "input_state":{
             "a0effb954cca4759994f1ac9e9434bf4_2_1":{
-
+               
             },
             "a0effb954cca4759994f1ac9e9434bf4_3_1":{
-
+               
             },
             "a0effb954cca4759994f1ac9e9434bf4_4_1":{
-
+               
             }
          },
          "done":true

@@ -15,7 +15,7 @@
       "objectType": "Agent",
       "account": {
         "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
-        "homePage": "http://local.overhang.io:8000"
+        "homePage": "http://localhost:18000"
       }
     },
     "verb": {
@@ -25,7 +25,7 @@
       }
     },
     "object": {
-      "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
+      "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
       "objectType": "GroupActivity",
       "definition": {
         "name": {
@@ -40,7 +40,7 @@
       "contextActivities": {
         "parent": [
           {
-            "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
             "objectType": "Activity",
             "definition": {
               "name": {
@@ -68,7 +68,7 @@
       "objectType": "Agent",
       "account": {
         "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
-        "homePage": "http://local.overhang.io:8000"
+        "homePage": "http://localhost:18000"
       }
     },
     "verb": {
@@ -78,7 +78,7 @@
       }
     },
     "object": {
-      "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4_4_1",
+      "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4_4_1",
       "objectType": "Activity",
       "definition": {
         "description": {
@@ -93,7 +93,7 @@
       "contextActivities": {
         "parent": [
           {
-            "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
+            "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
             "objectType": "GroupActivity",
             "definition": {
               "name": {
@@ -106,7 +106,7 @@
         ],
         "grouping": [
           {
-            "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
             "objectType": "Activity",
             "definition": {
               "name": {
@@ -138,7 +138,7 @@
       "objectType": "Agent",
       "account": {
         "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
-        "homePage": "http://local.overhang.io:8000"
+        "homePage": "http://localhost:18000"
       }
     },
     "verb": {
@@ -148,7 +148,7 @@
       }
     },
     "object": {
-      "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4_5_1",
+      "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4_5_1",
       "objectType": "Activity",
       "definition": {
         "description": {
@@ -163,7 +163,7 @@
       "contextActivities": {
         "parent": [
           {
-            "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
+            "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
             "objectType": "GroupActivity",
             "definition": {
               "name": {
@@ -176,7 +176,7 @@
         ],
         "grouping": [
           {
-            "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
             "objectType": "Activity",
             "definition": {
               "name": {
@@ -208,7 +208,7 @@
       "objectType": "Agent",
       "account": {
         "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
-        "homePage": "http://local.overhang.io:8000"
+        "homePage": "http://localhost:18000"
       }
     },
     "verb": {
@@ -218,7 +218,7 @@
       }
     },
     "object": {
-      "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4_2_1",
+      "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4_2_1",
       "objectType": "Activity",
       "definition": {
         "description": {
@@ -233,7 +233,7 @@
       "contextActivities": {
         "parent": [
           {
-            "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
+            "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
             "objectType": "GroupActivity",
             "definition": {
               "name": {
@@ -246,7 +246,7 @@
         ],
         "grouping": [
           {
-            "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
             "objectType": "Activity",
             "definition": {
               "name": {
@@ -278,7 +278,7 @@
       "objectType": "Agent",
       "account": {
         "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb",
-        "homePage": "http://local.overhang.io:8000"
+        "homePage": "http://localhost:18000"
       }
     },
     "verb": {
@@ -288,7 +288,7 @@
       }
     },
     "object": {
-      "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4_3_1",
+      "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4_3_1",
       "objectType": "Activity",
       "definition": {
         "description": {
@@ -303,7 +303,7 @@
       "contextActivities": {
         "parent": [
           {
-            "id": "http://local.overhang.io:8000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
+            "id": "http://localhost:18000/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@a0effb954cca4759994f1ac9e9434bf4",
             "objectType": "GroupActivity",
             "definition": {
               "name": {
@@ -316,7 +316,7 @@
         ],
         "grouping": [
           {
-            "id": "http://local.overhang.io:8000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
             "objectType": "Activity",
             "definition": {
               "name": {
