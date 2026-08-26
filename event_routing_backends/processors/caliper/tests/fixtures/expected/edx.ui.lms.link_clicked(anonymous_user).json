@@ -12,7 +12,7 @@
         "type": "Webpage",
         "extensions": {
           "isPartOf": {
-            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course",
             "type": "CourseOffering"
           }
         }

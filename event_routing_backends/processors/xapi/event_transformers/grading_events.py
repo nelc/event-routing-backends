@@ -87,7 +87,7 @@ class CourseGradedTransformer(XApiTransformer):
             `Activity`
         """
         course_id = self.get_data("context.course_id", True)
-        object_id = self.get_object_iri("course", course_id)
+        object_id = self.get_object_iri("courses", course_id)
         course = get_course_from_id(course_id)
         display_name = course["display_name"]
 

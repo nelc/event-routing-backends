@@ -30,7 +30,7 @@
     "contextActivities": {
       "parent": [
         {
-          "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+          "id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course",
           "objectType": "Activity",
           "definition": {
             "name": {
@@ -97,7 +97,7 @@
       ],
       "grouping": [
         {
-          "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+          "id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course",
           "objectType": "Activity",
           "definition": {
             "name": {
@@ -164,7 +164,7 @@
       ],
       "grouping": [
         {
-          "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+          "id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course",
           "objectType": "Activity",
           "definition": {
             "name": {
@@ -231,7 +231,7 @@
       ],
       "grouping": [
         {
-          "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+          "id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course",
           "objectType": "Activity",
           "definition": {
             "name": {

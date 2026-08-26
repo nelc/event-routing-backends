@@ -73,7 +73,7 @@ class NavigationEventsTransformers(CaliperTransformer):
         course_id = self.get_data('context.course_id')
         if course_id:
             extensions['isPartOf'] = {}
-            extensions['isPartOf']['id'] = self.get_object_iri('course', course_id)
+            extensions['isPartOf']['id'] = self.get_object_iri('courses', course_id)
             extensions['isPartOf']['type'] = 'CourseOffering'
 
         if extensions:

@@ -11,7 +11,7 @@
         "duration": "PT3M15S",
         "extensions": {
           "isPartOf": {
-            "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+            "id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course",
             "type": "CourseOffering"
           }
         },
@@ -19,7 +19,7 @@
         "type": "VideoObject"
     },
     "target": {
-      "id": "_:MediaLocation",      
+      "id": "_:MediaLocation",
       "type": "MediaLocation"
     },
     "extensions": {
@@ -28,6 +28,6 @@
     "session": {
       "id": "http://localhost:18000/sessions/993110e9c27848a545da74a74114158d",
       "type": "Session"
-    },    
+    },
     "type": "MediaEvent"
 }

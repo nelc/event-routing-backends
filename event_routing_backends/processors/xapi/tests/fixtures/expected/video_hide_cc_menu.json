@@ -8,7 +8,7 @@
         "contextActivities": {
             "parent": [
                 {
-                    "id": "http://localhost:18000/course/course-v1:edX+DemoX+Demo_Course",
+                    "id": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course",
                     "objectType": "Activity",
                     "definition": {
                       "name": {
@@ -22,7 +22,7 @@
         "extensions": {
             "https://w3id.org/xapi/openedx/extension/transformer-version": "event-routing-backends@1.1.1",
             "https://w3id.org/xapi/openedx/extensions/session-id": "95522acebdda19758bd98a456a640afa",
-            "https://w3id.org/xapi/video/extensions/length": 194.0            
+            "https://w3id.org/xapi/video/extensions/length": 194.0
         }
     },
     "object": {

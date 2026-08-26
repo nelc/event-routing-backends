@@ -184,11 +184,7 @@ class BaseTransformerMixin:
 
         if result is None:
             if required:
-                raise ValueError(
-                    'Could not get value for {} in event "{}"'.format(
-                        key, self.event.get("name", None)
-                    )
-                )
+                raise ValueError('Could not get value for {} in event "{}"'.format(key, self.event.get("name", None)))
 
         return result
 

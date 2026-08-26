@@ -8,7 +8,7 @@
         "contextActivities": {
             "parent": [
                 {
-                    "id": "http://localhost:18000/course/course-v1:TestX+XP101+2023_T1",
+                    "id": "http://localhost:18000/courses/course-v1:TestX+XP101+2023_T1",
                     "objectType": "Activity",
                     "definition": {
                       "name": {
