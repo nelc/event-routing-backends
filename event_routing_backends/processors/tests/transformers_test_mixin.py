@@ -179,3 +179,25 @@ class TransformersTestMixin:
             return
 
         self.check_event_transformer(raw_event_file_path, expected_event_file_path)
+
+    @override_settings(EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL=True)
+    @patch('event_routing_backends.helpers.uuid.uuid4')
+    @ddt.data(*EVENT_FIXTURE_FILENAMES)
+    def test_event_transformer_with_event_host(self, raw_event_file_path, mocked_uuid4):
+        # Used to generate the anonymized actor.name,
+        # which in turn is used to generate the event UUID.
+        mocked_uuid4.return_value = UUID('22e08e30-f8ae-4ce2-94a8-c2bfe38a70cb')
+
+        # if an event's expected fixture doesn't exist, the test shouldn't fail.
+        # evaluate transformation of only supported event fixtures.
+        base_event_filename = os.path.basename(raw_event_file_path)
+
+        expected_event_file_path = '{expected_events_fixture_path}/{event_filename}'.format(
+            expected_events_fixture_path=self.expected_events_fixture_path_event_host,
+            event_filename=base_event_filename,
+        )
+
+        if not os.path.isfile(expected_event_file_path):
+            return
+
+        self.check_event_transformer(raw_event_file_path, expected_event_file_path)

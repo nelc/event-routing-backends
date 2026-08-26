@@ -1,7 +1,6 @@
 """
 Transformers for forum related events.
 """
-from django.conf import settings
 from tincan import Activity, ActivityDefinition, LanguageMap, Verb
 
 from event_routing_backends.processors.openedx_filters.decorators import openedx_filter
@@ -34,7 +33,7 @@ class BaseForumThreadTransformer(XApiTransformer):
 
         return Activity(
             id='{lms_root_url}{object_path}/{object_id}'.format(
-                    lms_root_url=settings.LMS_ROOT_URL,
+                    lms_root_url=self.get_lms_root_url(),
                     object_path=object_path,
                     object_id=object_id
                 ),
@@ -54,7 +53,7 @@ class BaseForumThreadTransformer(XApiTransformer):
         context_activities.grouping = [
             Activity(
                 id='{lms_root_url}/api/discussion/v1/threads/{discussion_id}'.format(
-                    lms_root_url=settings.LMS_ROOT_URL,
+                    lms_root_url=self.get_lms_root_url(),
                     discussion_id=discussion
                 ),
                 definition=ActivityDefinition(

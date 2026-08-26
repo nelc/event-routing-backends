@@ -27,6 +27,13 @@ class CaliperTransformersFixturesTestMixin(TransformersFixturesTestMixin):
         """
         return '{}/fixtures/expected'.format(os.path.dirname(os.path.abspath(__file__)))
 
+    @property
+    def expected_events_fixture_path_event_host(self):
+        """
+        Return the path to the expected transformed events fixture files.
+        """
+        return '{}/fixtures/expected_event_host'.format(os.path.dirname(os.path.abspath(__file__)))
+
     def assert_correct_transformer_version(self, transformed_event, transformer_version):
         self.assertEqual(transformed_event['extensions']['transformerVersion'], transformer_version)
 

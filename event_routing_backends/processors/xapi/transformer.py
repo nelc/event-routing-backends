@@ -98,7 +98,7 @@ class XApiTransformer(BaseTransformerMixin):
         else:
             user_uuid = get_anonymous_user_id(self.extract_username_or_userid(), 'XAPI')
             agent = Agent(
-                account={"homePage": settings.LMS_ROOT_URL, "name": user_uuid}
+                account={"homePage": self.get_lms_root_url(), "name": user_uuid}
             )
         return agent
 

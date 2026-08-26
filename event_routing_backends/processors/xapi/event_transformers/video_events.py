@@ -31,7 +31,6 @@ The (soon to be) updated event names are as following:
 - edx.video.closed_captions.shown
 """
 
-from django.conf import settings
 from tincan import Activity, ActivityDefinition, Extensions, Result
 
 from event_routing_backends.helpers import convert_seconds_to_float, make_video_block_id
@@ -148,7 +147,7 @@ class BaseVideoTransformer(XApiTransformer, XApiVerbTransformerMixin):
 
         return Activity(
             id='{lms_root_url}/xblock/{object_id}'.format(
-                    lms_root_url=settings.LMS_ROOT_URL,
+                    lms_root_url=self.get_lms_root_url(),
                     object_id=object_id
                 ),
             definition=ActivityDefinition(

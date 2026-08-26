@@ -1,0 +1,51 @@
+{
+    "id": "3360c598-8acc-5303-9afa-6893f4ba9ec7",
+    "actor": {
+        "objectType": "Agent",
+        "account": {"homePage": "http://local.overhang.io:8000", "name": "32e08e30-f8ae-4ce2-94a8-c2bfe38a70cb"}
+    },
+    "context": {
+        "contextActivities": {
+            "parent": [
+                {
+                    "id": "http://local.overhang.io:8000/course/course-v1:TestX+XP101+2023_T1",
+                    "objectType": "Activity",
+                    "definition": {
+                      "name": {
+                        "en-US": "Demonstration Course"
+                      },
+                      "type": "http://adlnet.gov/expapi/activities/course"
+                    }
+                }
+            ],
+            "grouping": [
+                {
+                    "id": "http://local.overhang.io:8000/api/discussion/v1/threads/64d1df0887e82a002b35a6f7",
+                    "objectType": "Activity",
+                    "definition": {
+                        "type": "http://id.tincanapi.com/activitytype/discussion"
+                    }
+                }
+            ]
+        },
+        "extensions": {
+            "https://w3id.org/xapi/openedx/extension/transformer-version": "event-routing-backends@1.1.1",
+            "https://w3id.org/xapi/openedx/extensions/session-id": "cf416827826486d4986255dd8d4781bc"
+        }
+    },
+    "object": {
+        "definition": {
+            "type": "http://id.tincanapi.com/activitytype/discussion"
+        },
+        "id": "http://local.overhang.io:8000/api/discussion/v1/comments/64d2308202808b0030b8afaf",
+        "objectType": "Activity"
+    },
+    "timestamp": "2023-08-08T12:09:39.157587+00:00",
+    "verb": {
+        "display": {
+            "en": "posted"
+        },
+        "id": "https://w3id.org/xapi/acrossx/verbs/posted"
+    },
+    "version": "1.0.3"
+}
