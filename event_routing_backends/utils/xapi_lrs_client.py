@@ -1,15 +1,25 @@
 """
 An LRS client for xAPI stores.
 """
+from http.client import HTTPException
 from json.decoder import JSONDecodeError
 from logging import getLogger
 
 from tincan.remote_lrs import RemoteLRS
 
 from event_routing_backends.models import RouterConfiguration
-from event_routing_backends.processors.transformer_utils.exceptions import EventNotDispatched
+from event_routing_backends.processors.transformer_utils.exceptions import EventNotDispatched, EventRejected
 
 logger = getLogger(__name__)
+
+
+def is_rejection(status_code):
+    """
+    Return True when the LRS refused the content itself, so resending it unchanged cannot succeed.
+
+    409 (duplicate) is handled by the caller; 408 and 429 mean "try again later".
+    """
+    return isinstance(status_code, int) and 400 <= status_code < 500 and status_code not in (408, 409, 429)
 
 
 class LrsClient:
@@ -88,6 +98,12 @@ class LrsClient:
             logger.warning(
                 f"JSON Decode Error, this may indicate that all sent events are already stored: {statement_data}"
             )
+        except (OSError, HTTPException) as exc:
+            # tincan talks to the LRS through http.client, so a dropped or refused connection
+            # surfaces here (e.g. RemoteDisconnected). Report it as a retryable failure.
+            logger.warning('Connection to {} failed while sending {} xAPI statements: {!r}'.format(
+                self.URL, len(statement_data), exc))
+            raise EventNotDispatched from exc
 
         if not response:
             return
@@ -100,6 +116,8 @@ class LrsClient:
                 logger.warning('{} request failed for sending xAPI statement of edx events to {}. '
                                'Response code: {}. Response: {}'.format(response.request.method, self.URL,
                                                                         response.response.code, response.data))
+                if is_rejection(response.response.code):
+                    raise EventRejected(response.response.code)
                 raise EventNotDispatched
 
     def send(self, statement_data, event_name):
