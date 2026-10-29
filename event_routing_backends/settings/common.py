@@ -17,6 +17,18 @@ def plugin_settings(settings):
     settings.EVENT_ROUTING_BACKEND_COUNTDOWN = 30
     settings.EVENT_ROUTING_BACKEND_BULK_DOWNLOAD_MAX_RETRIES = 3
     settings.EVENT_ROUTING_BACKEND_BULK_DOWNLOAD_COUNTDOWN = 1
+    # .. setting_name: EVENT_ROUTING_BACKEND_BULK_CHUNK_SIZES
+    # .. setting_default: {}
+    # .. setting_description: Maps a router URL to the number of statements sent per request to it.
+    #    A batch for a listed URL is split into chunks of that size, each sent, retried and (on final
+    #    failure) persisted on its own; a refused chunk is split until the refused statement is alone.
+    #    Unlisted URLs keep receiving the whole batch in one request.
+    settings.EVENT_ROUTING_BACKEND_BULK_CHUNK_SIZES = {}
+    # .. setting_name: EVENT_ROUTING_BACKEND_BULK_CHUNK_MAX_RETRIES
+    # .. setting_default: 8
+    # .. setting_description: Retries for a chunk that failed on a dropped connection, timeout or 5xx,
+    #    with a delay of EVENT_ROUTING_BACKEND_COUNTDOWN doubled each time (30 s ... ~1 h, ~2 h in total).
+    settings.EVENT_ROUTING_BACKEND_BULK_CHUNK_MAX_RETRIES = 8
     settings.EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL = False
     # .. toggle_name: EVENT_ROUTING_BACKEND_BATCHING_ENABLED
     # .. toggle_implementation: DjangoSetting
