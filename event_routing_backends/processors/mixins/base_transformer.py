@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 from django.conf import settings
 
 from event_routing_backends import __version__
+from event_routing_backends.helpers import get_course_tenant_root_url
 from event_routing_backends.models import get_value_from_dotted_path
 
 logger = logging.getLogger(__name__)
@@ -234,12 +235,27 @@ class BaseTransformerMixin:
         Return LMS root url for the event. If the setting EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL is True,
         it will use the host from the event context to construct the LMS root url.
         Otherwise, it will use the LMS_ROOT_URL from the settings.
+        If the setting EVENT_ROUTING_BACKEND_USE_COURSE_TENANT_FOR_LMS_URL is True, the root url of the tenant
+        that owns the course org comes first, and EVENT_ROUTING_BACKEND_FALLBACK_LMS_ROOT_URL replaces LMS_ROOT_URL.
 
         Returns:
             lms_root_url (str): LMS root url for the event
         """
+        default_root_url = settings.LMS_ROOT_URL
 
-        parsed_url = urlparse(settings.LMS_ROOT_URL)
+        if getattr(settings, "EVENT_ROUTING_BACKEND_USE_COURSE_TENANT_FOR_LMS_URL", False):
+            course_id = (
+                self.get_data("context.course_id")
+                or self.get_data("data.course_id")
+                or self.get_data("event.course_id")
+            )
+            if course_id and (tenant_root_url := get_course_tenant_root_url(course_id)):
+                return tenant_root_url
+            default_root_url = (
+                getattr(settings, "EVENT_ROUTING_BACKEND_FALLBACK_LMS_ROOT_URL", None) or settings.LMS_ROOT_URL
+            )
+
+        parsed_url = urlparse(default_root_url)
 
         if getattr(settings, "EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL", False) and (
             event_host := self.event.get("context", {}).get("host")

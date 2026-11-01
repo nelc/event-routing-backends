@@ -30,6 +30,30 @@ def plugin_settings(settings):
     #    with a delay of EVENT_ROUTING_BACKEND_COUNTDOWN doubled each time (30 s ... ~1 h, ~2 h in total).
     settings.EVENT_ROUTING_BACKEND_BULK_CHUNK_MAX_RETRIES = 8
     settings.EVENT_ROUTING_BACKEND_USE_HOST_FOR_LMS_URL = False
+    # .. toggle_name: EVENT_ROUTING_BACKEND_USE_COURSE_TENANT_FOR_LMS_URL
+    # .. toggle_implementation: DjangoSetting
+    # .. toggle_default: False
+    # .. toggle_use_cases: opt_in
+    # .. toggle_creation_date: 2026-11-01
+    # .. toggle_description: Build IRIs and the actor homePage of course events from the LMS_ROOT_URL of the
+    #    eox-tenant that owns the course org, ahead of the event host. Events without a course, or whose org no
+    #    tenant owns, use the event host or EVENT_ROUTING_BACKEND_FALLBACK_LMS_ROOT_URL instead of LMS_ROOT_URL,
+    #    which eox-tenant rewrites per request and per Celery task.
+    settings.EVENT_ROUTING_BACKEND_USE_COURSE_TENANT_FOR_LMS_URL = False
+    # .. setting_name: EVENT_ROUTING_BACKEND_FALLBACK_LMS_ROOT_URL
+    # .. setting_default: None
+    # .. setting_description: LMS root url used instead of LMS_ROOT_URL when
+    #    EVENT_ROUTING_BACKEND_USE_COURSE_TENANT_FOR_LMS_URL is on and no tenant or event host applies.
+    settings.EVENT_ROUTING_BACKEND_FALLBACK_LMS_ROOT_URL = None
+    # .. setting_name: EVENT_ROUTING_BACKEND_ORG_HOST_OVERRIDES
+    # .. setting_default: {}
+    # .. setting_description: Maps a course org to its LMS root url, ahead of the eox-tenant lookup. Use it for
+    #    orgs listed by several tenants.
+    settings.EVENT_ROUTING_BACKEND_ORG_HOST_OVERRIDES = {}
+    # .. setting_name: EVENT_ROUTING_BACKEND_TENANT_MAP_TTL
+    # .. setting_default: 600
+    # .. setting_description: Seconds the org to tenant root url map is cached per process.
+    settings.EVENT_ROUTING_BACKEND_TENANT_MAP_TTL = 600
     # .. toggle_name: EVENT_ROUTING_BACKEND_BATCHING_ENABLED
     # .. toggle_implementation: DjangoSetting
     # .. toggle_default: False
