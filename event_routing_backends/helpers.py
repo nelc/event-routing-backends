@@ -3,11 +3,13 @@ Helper utilities for event transformers.
 """
 import datetime
 import logging
+import time
 import uuid
 from functools import lru_cache
 from urllib.parse import parse_qs, urlparse
 
 from dateutil.parser import parse
+from django.apps import apps
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from isodate import duration_isoformat
@@ -32,6 +34,7 @@ except ImportError as exc:  # pragma: no cover
 User = get_user_model()
 UTC_DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%f'
 BLOCK_ID_FORMAT = '{block_version}:{course_id}+type@{block_type}+block@{block_id}'
+_ORG_TENANT_ROOTS = {'expires_at': 0, 'roots': {}}
 
 
 def get_uuid5(namespace_key, name):
@@ -363,3 +366,72 @@ def get_block_version(course_id):
     if "ccx" in course_id_array[0]:
         block_version = "ccx-{block_version}".format(block_version=block_version)
     return block_version
+
+
+def _load_org_tenant_roots():
+    """
+    Map every course org to the LMS_ROOT_URL of the eox-tenant config that lists it in course_org_filter.
+
+    An org listed by several tenants keeps the lowest tenant id; set it explicitly in
+    EVENT_ROUTING_BACKEND_ORG_HOST_OVERRIDES.
+
+    Returns:
+        dict: lower-cased org -> lower-cased root url
+    """
+    try:
+        tenant_config = apps.get_model('eox_tenant', 'TenantConfig')
+    except LookupError:
+        return {}
+
+    roots = {}
+    for tenant_id, lms_configs in tenant_config.objects.order_by('id').values_list('id', 'lms_configs'):
+        lms_configs = lms_configs or {}
+        root_url = lms_configs.get('LMS_ROOT_URL')
+        orgs = lms_configs.get('course_org_filter') or []
+        if not root_url:
+            continue
+        if isinstance(orgs, str):
+            orgs = [orgs]
+        for org in orgs:
+            org, root_url = str(org).lower(), root_url.lower().rstrip('/')
+            if roots.setdefault(org, root_url) != root_url:
+                logger.warning(
+                    'Org %s is listed by several tenants; tenant %s (%s) ignored, keeping %s',
+                    org, tenant_id, root_url, roots[org],
+                )
+    return roots
+
+
+def get_course_tenant_root_url(course_id):
+    """
+    Return the LMS root url of the tenant that owns the course's org, or None when no tenant owns it.
+
+    The org map is read from eox-tenant and cached for EVENT_ROUTING_BACKEND_TENANT_MAP_TTL seconds.
+
+    Arguments:
+        course_id (str):    course id
+
+    Returns:
+        str or None
+    """
+    _, _, key = str(course_id).partition(':')
+    org = key.split('+', 1)[0].lower()
+    if not org:
+        return None
+
+    overrides = {
+        key.lower(): value.lower().rstrip('/')
+        for key, value in getattr(settings, 'EVENT_ROUTING_BACKEND_ORG_HOST_OVERRIDES', {}).items()
+    }
+    if org in overrides:
+        return overrides[org]
+
+    if time.monotonic() >= _ORG_TENANT_ROOTS['expires_at']:
+        try:
+            _ORG_TENANT_ROOTS['roots'] = _load_org_tenant_roots()
+        except Exception:  # pylint: disable=broad-except
+            logger.exception('Could not load the org to tenant map; keeping the previous one')
+        _ORG_TENANT_ROOTS['expires_at'] = time.monotonic() + getattr(
+            settings, 'EVENT_ROUTING_BACKEND_TENANT_MAP_TTL', 600
+        )
+    return _ORG_TENANT_ROOTS['roots'].get(org)
